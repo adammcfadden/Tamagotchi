@@ -9,6 +9,7 @@ describe(Tamagotchi) do
       expect(my_pet.food_level()).to(eq(10))
       expect(my_pet.sleep_level()).to(eq(10))
       expect(my_pet.activity_level()).to(eq(10))
+      expect(my_pet.stinky_level()).to(eq(0))
     end
   end
   describe("#time_passes") do
@@ -101,4 +102,5 @@ describe(Tamagotchi) do
       expect(my_pet.activity_level()).to(eq(8))
     end
   end
+
 end

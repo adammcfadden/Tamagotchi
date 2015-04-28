@@ -1,14 +1,11 @@
 class Tamagotchi
 
-  # @@food_level = 10
-  # @@sleep_level = 10
-  # @@activity_level = 10
-
   define_method(:initialize) do |pet_name|
     @pet_name = pet_name
     @food_level = 10
     @sleep_level = 10
     @activity_level = 10
+    @stinky_level = 0
   end
 
   define_method(:name) do
@@ -27,10 +24,15 @@ class Tamagotchi
     @activity_level
   end
 
+  define_method(:stinky_level) do
+    @stinky_level
+  end
+
   define_method(:time_passes) do
     @food_level -= 1
     @sleep_level -= 1
     @activity_level -= 1
+    self.sick() if stinky_level > 3
   end
 
   define_method(:is_alive?) do
@@ -49,10 +51,15 @@ class Tamagotchi
     @sleep_level = sleep_level
   end
 
+  define_method(:set_stinky_level) do |stinky_level|
+    @stinky_level = stinky_level
+  end
+
   define_method(:play) do
     @activity_level += 3
     @sleep_level -= 1
     @food_level -= 1
+    @stinky_level += 1
   end
 
   define_method(:feed) do
@@ -65,6 +72,7 @@ class Tamagotchi
     @sleep_level += 3
     @food_level -= 1
     @activity_level -= 1
+    @stinky_level += 1
   end
 
   define_method(:sick) do
