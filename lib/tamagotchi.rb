@@ -1,5 +1,18 @@
 class Tamagotchi
 
+  #  @@pet_name = ''
+  #  @@food_level = 0
+  #  @@sleep_level = 0
+  #  @@activity_level = 0
+  #  @@stinky_level = 0
+  #
+  # define_singleton_method(:to_global) do
+  #   @@pet_name = @pet_name
+  #   @@food_level = @food_level
+  #   @@sleep_level = @sleep_level
+  #   @@activity_level = @activity_level
+  #   @@stinky_level = @stinky_level
+
   define_method(:initialize) do |pet_name|
     @pet_name = pet_name
     @food_level = 10
@@ -52,7 +65,9 @@ class Tamagotchi
       @stinky_level = 0
     end
 
-    "You dead" if @sleep_level < 1 || @food_level < 1 || @activity_level < 1
+    #####put this piece of code into the app.rb file##
+    #"You dead" if @sleep_level < 1 || @food_level < 1 || @activity_level < 1
+    #####
     @activity_level = 10 if @activity_level > 10
     @sleep_level = 10 if @sleep_level > 10
     @food_level = 10 if @food_level > 10
