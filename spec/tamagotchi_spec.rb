@@ -94,4 +94,11 @@ describe(Tamagotchi) do
     end
   end
 
+  describe("#sick") do
+    it('impacts all stats by -2') do
+      my_pet = Tamagotchi.new("lil dragon")
+      my_pet.sick()
+      expect(my_pet.activity_level()).to(eq(8))
+    end
+  end
 end

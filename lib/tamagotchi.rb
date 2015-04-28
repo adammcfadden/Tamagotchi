@@ -67,5 +67,9 @@ class Tamagotchi
     @activity_level -= 1
   end
 
-
+  define_method(:sick) do
+    @food_level -= 2
+    @sleep_level -= 2
+    @activity_level -= 2
+  end
 end
