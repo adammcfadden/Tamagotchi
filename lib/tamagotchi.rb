@@ -1,11 +1,14 @@
 class Tamagotchi
-  @@my_pet = []
-  @@food_level = 10
-  @@sleep_level = 10
-  @@activity_level = 10
+
+  # @@food_level = 10
+  # @@sleep_level = 10
+  # @@activity_level = 10
 
   define_method(:initialize) do |pet_name|
     @pet_name = pet_name
+    @food_level = 10
+    @sleep_level = 10
+    @activity_level = 10
   end
 
   define_method(:name) do
@@ -13,22 +16,28 @@ class Tamagotchi
   end
 
   define_method(:food_level) do
-    @@food_level
+    @food_level
   end
 
   define_method(:sleep_level) do
-    @@sleep_level
+    @sleep_level
   end
 
   define_method(:activity_level) do
-    @@activity_level
+    @activity_level
   end
 
   define_method(:time_passes) do
-    @@food_level -= 1
+    @food_level -= 1
+    @sleep_level -= 1
+    @activity_level -= 1
   end
 
   define_method(:is_alive?) do
-    @@food_level > 0
+    @food_level > 0
+  end
+
+  define_method(:set_food_level) do |food_level|
+    @food_level = food_level
   end
 end
