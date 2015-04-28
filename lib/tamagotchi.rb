@@ -35,6 +35,23 @@ class Tamagotchi
     self.sick() if stinky_level > 3
   end
 
+  # define_method(:time_passes) do |activity_one, activity_two|
+  #   @food_level -= 1
+  #   @sleep_level -= 1
+  #   @activity_level -= 1
+  #   self.sick() if stinky_level > 3
+  #   if activity_one = play
+  #     @activity_level += 3
+  #     @sleep_level -= 1
+  #     @food_level -= 1
+  #     @stinky_level += 1
+  #     @activity_level = 10 if @activity_level > 10
+  #     "You dead" if @sleep_level < 1 || @food_level < 1
+  #   elsif activity_one = feed
+
+  end
+
+
   define_method(:is_alive?) do
     @food_level > 0
   end
@@ -60,6 +77,8 @@ class Tamagotchi
     @sleep_level -= 1
     @food_level -= 1
     @stinky_level += 1
+    @activity_level = 10 if @activity_level > 10
+    "You dead" if @sleep_level < 1 || @food_level < 1
   end
 
   define_method(:feed) do
