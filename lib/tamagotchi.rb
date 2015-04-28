@@ -80,4 +80,9 @@ class Tamagotchi
     @sleep_level -= 2
     @activity_level -= 2
   end
+
+  define_method(:bathtime) do
+    @stinky_level = 0
+  end
+
 end

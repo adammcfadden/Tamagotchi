@@ -103,4 +103,12 @@ describe(Tamagotchi) do
     end
   end
 
+  describe("#bathtime") do
+    it('returns stinky_level to zero') do
+      my_pet = Tamagotchi.new('lil dragon')
+      my_pet.set_stinky_level(4)
+      my_pet.bathtime()
+      expect(my_pet.stinky_level()).to(eq(0))
+    end
+  end
 end
