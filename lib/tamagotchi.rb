@@ -1,18 +1,5 @@
 class Tamagotchi
 
-  #  @@pet_name = ''
-  #  @@food_level = 0
-  #  @@sleep_level = 0
-  #  @@activity_level = 0
-  #  @@stinky_level = 0
-  #
-  # define_singleton_method(:to_global) do
-  #   @@pet_name = @pet_name
-  #   @@food_level = @food_level
-  #   @@sleep_level = @sleep_level
-  #   @@activity_level = @activity_level
-  #   @@stinky_level = @stinky_level
-
   define_method(:initialize) do |pet_name|
     @pet_name = pet_name
     @food_level = 10
@@ -47,21 +34,21 @@ class Tamagotchi
     @activity_level -= 1
     self.sick() if stinky_level > 3
 
-    if activity_one = 'play'
+    if activity_one == 'play'
       @activity_level += 3
       @sleep_level -= 1
       @food_level -= 1
       @stinky_level += 1
-    elsif activity_one = 'feed'
+    elsif activity_one == 'feed'
       @food_level += 3
       @sleep_level -= 1
       @activity_level -= 1
-    elsif activity_one = 'sleep'
+    elsif activity_one == 'sleep'
       @sleep_level += 3
       @food_level -= 1
       @activity_level -= 1
       @stinky_level += 1
-    elsif activity_one = 'bathtime'
+    elsif activity_one == 'bathtime'
       @stinky_level = 0
     end
 
