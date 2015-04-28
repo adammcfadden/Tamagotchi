@@ -28,13 +28,6 @@ class Tamagotchi
     @stinky_level
   end
 
-  # define_method(:time_passes) do
-  #   @food_level -= 1
-  #   @sleep_level -= 1
-  #   @activity_level -= 1
-  #   self.sick() if stinky_level > 3
-  # end
-
   define_method(:time_passes) do |activity_one|
     @food_level -= 1
     @sleep_level -= 1
@@ -65,7 +58,6 @@ class Tamagotchi
     @food_level = 10 if @food_level > 10
   end
 
-
   define_method(:is_alive?) do
     @food_level > 0
   end
@@ -86,36 +78,10 @@ class Tamagotchi
     @stinky_level = stinky_level
   end
 
-  # define_method(:play) do
-  #   @activity_level += 3
-  #   @sleep_level -= 1
-  #   @food_level -= 1
-  #   @stinky_level += 1
-  #   @activity_level = 10 if @activity_level > 10
-  #   "You dead" if @sleep_level < 1 || @food_level < 1
-  # end
-  #
-  # define_method(:feed) do
-  #   @food_level += 3
-  #   @sleep_level -= 1
-  #   @activity_level -= 1
-  # end
-  #
-  # define_method(:sleep) do
-  #   @sleep_level += 3
-  #   @food_level -= 1
-  #   @activity_level -= 1
-  #   @stinky_level += 1
-  # end
-  #
   define_method(:sick) do
     @food_level -= 2
     @sleep_level -= 2
     @activity_level -= 2
   end
-  #
-  # define_method(:bathtime) do
-  #   @stinky_level = 0
-  # end
 
 end
